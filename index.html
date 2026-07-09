@@ -80,7 +80,6 @@
   .orb-1{width:70px;height:70px;right:14%;bottom:6%}
   .orb-2{width:34px;height:34px;right:30%;bottom:16%}
 
-  /* عشب صحراوي */
   .grass{position:absolute;bottom:-4px;opacity:.85}
   .g1{right:4%;width:130px}
   .g2{right:22%;width:90px;opacity:.6}
@@ -113,7 +112,6 @@
     to{opacity:1;transform:translateY(0) scale(1)}
   }
 
-  /* النافذة الدائرية للمنتج */
   .window{
     width:200px;height:200px;margin:0 auto 22px;
     border-radius:50%;
@@ -199,27 +197,21 @@
 </head>
 <body>
 
-<!-- الخلفية الصورية: صورة المرجع (مشهد الصحراء) -->
+<!-- الخلفية الصورية -->
 <img class="bg-photo" src="bg.jpg" alt="" aria-hidden="true" onerror="this.remove()">
 
 <!-- المشهد الخلفي (يظهر إذا لم توجد bg.jpg) -->
 <div class="scene" aria-hidden="true">
   <div class="moon"></div>
-
-  <!-- كثبان رملية -->
   <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice">
     <path d="M0,560 C240,480 420,530 640,500 C880,465 1080,540 1440,470 L1440,900 L0,900 Z" fill="#d8bd97" opacity=".55"/>
     <path d="M0,650 C300,580 560,660 820,620 C1080,580 1260,660 1440,610 L1440,900 L0,900 Z" fill="#e3ccab" opacity=".75"/>
     <path d="M0,760 C360,700 680,780 1000,740 C1220,712 1340,760 1440,740 L1440,900 L0,900 Z" fill="#ecdcc1"/>
-    <!-- صخور بعيدة -->
     <path d="M1050,540 L1120,455 L1200,530 L1260,480 L1330,560 L1050,560 Z" fill="#9c6f4e" opacity=".5"/>
     <path d="M120,600 L190,505 L280,595 L120,610 Z" fill="#8f6647" opacity=".45"/>
   </svg>
-
   <div class="orb-sm orb-1"></div>
   <div class="orb-sm orb-2"></div>
-
-  <!-- عشب -->
   <svg class="grass g1" viewBox="0 0 100 80"><g stroke="#7a6a4a" stroke-width="1.6" fill="none" stroke-linecap="round"><path d="M50,80 C48,50 42,30 30,12"/><path d="M52,80 C54,48 60,28 74,10"/><path d="M50,80 C50,45 49,25 50,5"/><path d="M48,80 C44,55 36,40 22,30"/><path d="M54,80 C60,55 68,42 82,34"/></g></svg>
   <svg class="grass g2" viewBox="0 0 100 80"><g stroke="#857452" stroke-width="1.4" fill="none" stroke-linecap="round"><path d="M50,80 C46,50 38,32 26,16"/><path d="M52,80 C56,46 64,30 78,14"/><path d="M50,80 C50,48 50,26 51,8"/></g></svg>
   <svg class="grass g3" viewBox="0 0 100 80"><g stroke="#7a6a4a" stroke-width="1.5" fill="none" stroke-linecap="round"><path d="M50,80 C47,52 40,34 28,18"/><path d="M52,80 C55,48 62,30 76,12"/><path d="M50,80 C50,46 49,24 50,6"/><path d="M47,80 C42,58 34,44 20,36"/></g></svg>
@@ -231,8 +223,39 @@
   <article class="card">
 
     <div class="window">
-      <!-- صورة المنتج -->
       <img src="product.jpg" alt="عبوة كحل الإثمد الحجازي" onerror="this.remove()">
-      <!-- شعار House of Athmid (يظهر إذا لم توجد الصورة) -->
-      <svg viewBox="0 0 200 240" fill="none" aria-hidden="true">
-        <!-- السداسي -->
+    </div>
+
+    <p class="eyebrow">HOUSE OF ATHMID</p>
+    <h1>كحل الإثمد الحجازي الأصيل</h1>
+    <p class="sub">نقاء مستوحى من إرث المدينة المنورة...<br>وفخامة صُممت لترافق جمال عينيك كل يوم</p>
+
+    <div class="divider"></div>
+
+    <p class="price">١١٠ <span>ر.س</span></p>
+
+    <a class="cta" id="buy-btn" href="https://amzn.eu/d/03UWrCWQ" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4h-2l-1 2h-2v2h1.6l2.7 9.4a2 2 0 0 0 1.9 1.6h8.6a2 2 0 0 0 1.9-1.5l2.1-7.5h-14.6l-0.9-4a2 2 0 0 0 -1.3-2z" opacity=".9"/><circle cx="10" cy="21" r="1.6"/><circle cx="17" cy="21" r="1.6"/></svg>
+      اطلب الآن من أمازون
+    </a>
+
+    <p class="note">إثمد أصلي<span class="dot">·</span>مرود نحاسي<span class="dot">·</span>شحن سريع</p>
+
+  </article>
+</main>
+
+<script>
+  document.getElementById('buy-btn').addEventListener('click', function(){
+    if (window.ttq) {
+      ttq.track('InitiateCheckout', {
+        content_name: 'كحل الإثمد الحجازي الأصيل',
+        content_type: 'product',
+        currency: 'SAR',
+        value: 110
+      });
+    }
+  });
+</script>
+
+</body>
+</html>

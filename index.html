@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>كحل الإثمد الحجازي — House of Athmid</title>
-<meta name="description" content="كحل الإثمد الحجازي الأصيل — نقاء مستوحى من إرث المدينة المنورة. إثمد أصلي مع مرود نحاسي. اطلبه الآن.">
+<title>كحل الإثمد الحجازي الأصلي — House of Athmid</title>
+<meta name="description" content="كحل الإثمد الأصلي النقي 100% من المدينة المنورة، خالٍ من الرصاص، مع مكحلة نحاسية فاخرة. يُباع ويُشحن عبر أمازون السعودية — شحن وإرجاع مجاني.">
 <meta property="og:type" content="product">
-<meta property="og:title" content="كحل الإثمد الحجازي الأصيل — House of Athmid">
-<meta property="og:description" content="نقاء مستوحى من إرث المدينة المنورة... وفخامة صُممت لترافق جمال عينيك كل يوم. ١١٠ ر.س">
+<meta property="og:title" content="كحل الإثمد الحجازي الأصلي — House of Athmid">
+<meta property="og:description" content="إثمد نقي 100% من المدينة المنورة، خالٍ من الرصاص، مع مكحلة نحاسية. اطلبه الآن عبر أمازون — ٩٧ ر.س بدل ١١٠.">
 <meta property="og:image" content="product.jpg">
 <link rel="icon" type="image/jpeg" href="product.jpg">
 
@@ -24,237 +24,257 @@
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --sand-light:#efe3d0;
-    --sand:#dfc9a8;
-    --sand-deep:#c3a179;
-    --dusk-pink:#e8c4b8;
-    --sky-top:#cdb9c9;
-    --sky-mid:#e3cfc4;
-    --ink:#17130e;
-    --gold:#b8923f;
-    --gold-light:#d9bc7a;
-    --cream:#f6efe2;
-    --card-radius:190px;
+    --sand-light:#efe3d0; --sand:#dfc9a8; --sand-deep:#c3a179;
+    --dusk-pink:#e8c4b8; --sky-top:#cdb9c9; --sky-mid:#e3cfc4;
+    --ink:#17130e; --gold:#b8923f; --gold-light:#d9bc7a; --cream:#f6efe2;
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  html,body{height:100%}
+  html{scroll-behavior:smooth}
   body{
-    font-family:'Tajawal',sans-serif;
-    color:var(--ink);
-    overflow-x:hidden;
-    background:linear-gradient(180deg,var(--sky-top) 0%,var(--sky-mid) 30%,var(--dusk-pink) 48%,var(--sand) 62%,var(--sand-light) 100%);
-    min-height:100svh;
+    font-family:'Tajawal',sans-serif; color:var(--ink); overflow-x:hidden;
+    background:linear-gradient(180deg,var(--sky-top) 0%,var(--sky-mid) 20%,var(--dusk-pink) 34%,var(--sand) 50%,var(--sand-light) 68%,#f4ecdd 100%);
+    min-height:100svh; padding-bottom:76px;
   }
+  .wrap{max-width:440px;margin:0 auto;position:relative;z-index:2}
 
-  /* الخلفية الصورية */
-  .bg-photo{
-    position:fixed;inset:0;z-index:1;
-    width:100%;height:100%;
-    object-fit:cover;object-position:center bottom;
-    pointer-events:none;
-  }
+  /* ===== الخلفية ===== */
+  .bg-photo{position:fixed;inset:0;z-index:0;width:100%;height:60vh;object-fit:cover;object-position:center top;opacity:.5;pointer-events:none;-webkit-mask-image:linear-gradient(180deg,#000 40%,transparent);mask-image:linear-gradient(180deg,#000 40%,transparent)}
 
-  /* ====== المشهد الصحراوي ====== */
-  .scene{
-    position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;
-  }
-  .scene svg{position:absolute;inset:0;width:100%;height:100%}
-  .moon{
-    position:absolute;
-    width:min(46vw,420px);height:min(46vw,420px);
-    border-radius:50%;
-    background:radial-gradient(circle at 38% 32%,#fdf3e3 0%,#f3ddb9 45%,#e9c98f 100%);
-    left:6%;bottom:8%;
-    box-shadow:0 0 120px 40px rgba(243,221,185,.55);
-    animation:breathe 9s ease-in-out infinite;
-  }
-  @keyframes breathe{
-    0%,100%{box-shadow:0 0 120px 40px rgba(243,221,185,.55)}
-    50%{box-shadow:0 0 150px 60px rgba(243,221,185,.75)}
-  }
-  .orb-sm{
-    position:absolute;border-radius:50%;
-    background:radial-gradient(circle at 35% 30%,#fbf0dd,#e6c68d);
-    box-shadow:0 0 40px 12px rgba(240,218,178,.5);
-  }
-  .orb-1{width:70px;height:70px;right:14%;bottom:6%}
-  .orb-2{width:34px;height:34px;right:30%;bottom:16%}
-
-  .grass{position:absolute;bottom:-4px;opacity:.85}
-  .g1{right:4%;width:130px}
-  .g2{right:22%;width:90px;opacity:.6}
-  .g3{left:10%;width:110px;opacity:.7}
-  .g4{left:32%;width:70px;opacity:.5}
-
-  /* ====== البطاقة الزجاجية ====== */
-  .stage{
-    position:relative;z-index:2;
-    min-height:100svh;
-    display:flex;align-items:center;justify-content:center;
-    padding:48px 20px;
-  }
+  /* ===== HERO ===== */
+  .hero{padding:40px 18px 26px;text-align:center}
   .card{
-    width:min(88vw,330px);
-    border-radius:var(--card-radius);
-    padding:30px 26px 34px;
-    text-align:center;
-    background:linear-gradient(165deg,rgba(255,252,246,.42) 0%,rgba(244,230,209,.22) 45%,rgba(210,186,152,.28) 100%);
-    -webkit-backdrop-filter:blur(22px) saturate(1.15);
-    backdrop-filter:blur(22px) saturate(1.15);
-    border:1px solid rgba(255,253,247,.55);
-    box-shadow:
-      0 30px 60px -20px rgba(90,66,38,.35),
-      inset 0 1px 0 rgba(255,255,255,.6);
-    animation:rise .9s cubic-bezier(.22,1,.36,1) both;
+    border-radius:44px;padding:30px 24px 30px;
+    background:linear-gradient(165deg,rgba(255,252,246,.5),rgba(244,230,209,.28) 45%,rgba(210,186,152,.34));
+    -webkit-backdrop-filter:blur(22px) saturate(1.15);backdrop-filter:blur(22px) saturate(1.15);
+    border:1px solid rgba(255,253,247,.6);
+    box-shadow:0 30px 60px -20px rgba(90,66,38,.35),inset 0 1px 0 rgba(255,255,255,.6);
+    animation:rise .8s cubic-bezier(.22,1,.36,1) both;
   }
-  @keyframes rise{
-    from{opacity:0;transform:translateY(26px) scale(.97)}
-    to{opacity:1;transform:translateY(0) scale(1)}
-  }
-
-  .window{
-    width:200px;height:200px;margin:0 auto 22px;
-    border-radius:50%;
-    overflow:hidden;
-    border:1px solid rgba(255,253,247,.65);
-    background:radial-gradient(circle at 50% 30%,#f9f3e7 0%,#efe4cf 60%,#e2d0b2 100%);
-    display:flex;align-items:center;justify-content:center;
-    box-shadow:inset 0 4px 18px rgba(120,92,52,.18);
-  }
+  @keyframes rise{from{opacity:0;transform:translateY(22px) scale(.98)}to{opacity:1;transform:none}}
+  .window{width:196px;height:196px;margin:0 auto 20px;border-radius:50%;overflow:hidden;border:1px solid rgba(255,253,247,.65);background:radial-gradient(circle at 50% 30%,#f9f3e7,#e2d0b2);box-shadow:inset 0 4px 18px rgba(120,92,52,.18)}
   .window img{width:100%;height:100%;object-fit:cover;display:block}
-  .window svg{width:66%;height:66%}
+  .eyebrow{font-size:12px;letter-spacing:.35em;color:rgba(23,19,14,.62);text-transform:uppercase;margin-bottom:8px}
+  h1{font-family:'Amiri',serif;font-weight:700;font-size:33px;line-height:1.28;margin-bottom:10px}
+  .sub{font-size:15px;color:rgba(23,19,14,.78);line-height:1.8;margin-bottom:16px}
+  .badges{display:flex;flex-wrap:wrap;justify-content:center;gap:7px;margin-bottom:18px}
+  .badge{font-size:12px;font-weight:500;background:rgba(255,255,255,.5);border:1px solid rgba(184,146,63,.35);color:#6a5326;padding:5px 11px;border-radius:999px}
 
-  .eyebrow{
-    font-size:12px;letter-spacing:.35em;
-    color:rgba(23,19,14,.62);
-    font-weight:400;
-    text-transform:uppercase;
-    font-family:'Tajawal',sans-serif;
-    margin-bottom:6px;
-  }
-  h1{
-    font-family:'Amiri',serif;
-    font-weight:700;
-    font-size:34px;
-    line-height:1.25;
-    color:var(--ink);
-    margin-bottom:10px;
-  }
-  .sub{
-    font-size:14.5px;font-weight:400;
-    color:rgba(23,19,14,.72);
-    line-height:1.8;
-    margin-bottom:16px;
-  }
-  .sub b{font-weight:500;color:var(--ink)}
-  .divider{
-    width:34px;height:1px;margin:0 auto 16px;
-    background:linear-gradient(90deg,transparent,var(--gold),transparent);
-  }
-  .price{
-    font-family:'Amiri',serif;
-    font-size:30px;font-weight:700;
-    color:var(--ink);
-    margin-bottom:20px;
-  }
-  .price span{font-size:16px;font-family:'Tajawal',sans-serif;font-weight:400;color:rgba(23,19,14,.65)}
+  /* السعر */
+  .price-row{display:flex;align-items:baseline;justify-content:center;gap:10px;margin-bottom:4px}
+  .price{font-family:'Amiri',serif;font-size:38px;font-weight:700}
+  .price span{font-size:17px;font-family:'Tajawal',sans-serif;font-weight:400;color:rgba(23,19,14,.65)}
+  .old{font-size:19px;color:rgba(23,19,14,.45);text-decoration:line-through}
+  .save{display:inline-block;background:#2f7d54;color:#fff;font-size:12.5px;font-weight:700;padding:3px 10px;border-radius:999px;margin-bottom:18px}
 
-  .cta{
-    display:flex;align-items:center;justify-content:center;gap:10px;
-    width:100%;
-    padding:15px 20px;
-    border-radius:999px;
-    background:var(--ink);
-    color:var(--cream);
-    text-decoration:none;
-    font-size:16.5px;font-weight:500;
-    letter-spacing:.02em;
-    transition:transform .25s cubic-bezier(.22,1,.36,1),box-shadow .25s,background .25s;
-    box-shadow:0 12px 26px -10px rgba(23,19,14,.55);
-  }
-  .cta:hover{transform:translateY(-2px);background:#241d14;box-shadow:0 18px 32px -10px rgba(23,19,14,.6)}
+  /* CTA */
+  .cta{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:17px 20px;border-radius:999px;background:var(--ink);color:var(--cream);text-decoration:none;font-size:17px;font-weight:700;letter-spacing:.02em;box-shadow:0 14px 28px -10px rgba(23,19,14,.55);transition:transform .2s,box-shadow .2s,background .2s}
+  .cta:hover{transform:translateY(-2px);background:#241d14}
   .cta:active{transform:translateY(0)}
-  .cta:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
-  .cta svg{width:19px;height:19px;flex-shrink:0}
+  .cta svg{width:20px;height:20px;flex-shrink:0}
+  .cta.gold{background:linear-gradient(135deg,#c19a44,#a97f2f);box-shadow:0 14px 28px -10px rgba(150,110,40,.6)}
+  .cta.gold:hover{background:linear-gradient(135deg,#d3a94e,#b5892f)}
+  .microtrust{margin-top:13px;font-size:12.5px;color:rgba(23,19,14,.6);display:flex;flex-wrap:wrap;justify-content:center;gap:4px 6px}
+  .microtrust .dot{color:var(--gold)}
 
-  .note{
-    margin-top:14px;
-    font-size:12.5px;font-weight:300;
-    color:rgba(23,19,14,.55);
-    letter-spacing:.04em;
-  }
-  .note .dot{color:var(--gold);margin:0 5px}
+  /* ===== الأقسام ===== */
+  section.blk{padding:24px 20px}
+  .blk h2{font-family:'Amiri',serif;font-size:25px;text-align:center;margin-bottom:6px}
+  .blk .lead{text-align:center;font-size:14px;color:rgba(23,19,14,.68);line-height:1.8;max-width:360px;margin:0 auto 20px}
 
-  @media (max-width:400px){
-    .window{width:170px;height:170px}
-    h1{font-size:29px}
-    .card{padding:26px 20px 30px}
-  }
-  @media (prefers-reduced-motion:reduce){
-    .card,.moon{animation:none}
-  }
+  /* شريط الثقة */
+  .trust-strip{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;max-width:400px;margin:0 auto}
+  .trust-strip .ti{display:flex;align-items:center;gap:9px;background:rgba(255,255,255,.44);border:1px solid rgba(255,253,247,.6);border-radius:16px;padding:12px 13px;font-size:13.5px;font-weight:500}
+  .trust-strip .ti svg{width:22px;height:22px;flex-shrink:0;color:var(--gold)}
+
+  /* الفوائد */
+  .benefits{display:flex;flex-direction:column;gap:12px;max-width:400px;margin:0 auto}
+  .bcard{display:flex;gap:14px;align-items:flex-start;background:rgba(255,255,255,.4);border:1px solid rgba(255,253,247,.55);border-radius:20px;padding:16px 16px}
+  .bcard .ic{width:44px;height:44px;flex-shrink:0;border-radius:14px;background:linear-gradient(135deg,rgba(217,188,122,.5),rgba(184,146,63,.3));display:flex;align-items:center;justify-content:center}
+  .bcard .ic svg{width:24px;height:24px;color:#6a5326}
+  .bcard h3{font-size:16px;font-weight:700;margin-bottom:3px}
+  .bcard p{font-size:13.5px;color:rgba(23,19,14,.7);line-height:1.7}
+
+  /* داخل العلبة */
+  .box-list{max-width:400px;margin:0 auto;background:rgba(255,255,255,.4);border:1px solid rgba(255,253,247,.55);border-radius:20px;padding:8px 18px}
+  .box-list li{list-style:none;display:flex;align-items:center;gap:12px;padding:13px 0;font-size:14.5px;border-bottom:1px solid rgba(160,130,90,.18)}
+  .box-list li:last-child{border-bottom:none}
+  .box-list li svg{width:20px;height:20px;color:var(--gold);flex-shrink:0}
+
+  /* كيفية الاستخدام */
+  .steps{display:flex;flex-direction:column;gap:12px;max-width:400px;margin:0 auto}
+  .step{display:flex;gap:14px;align-items:flex-start}
+  .step .n{width:32px;height:32px;flex-shrink:0;border-radius:50%;background:var(--ink);color:var(--cream);font-family:'Amiri',serif;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:16px}
+  .step p{font-size:14px;color:rgba(23,19,14,.8);line-height:1.7;padding-top:4px}
+
+  /* بطاقة الضمان */
+  .guarantee{max-width:400px;margin:0 auto;text-align:center;background:linear-gradient(165deg,rgba(255,252,246,.55),rgba(210,186,152,.3));border:1px solid rgba(255,253,247,.6);border-radius:24px;padding:24px 20px}
+  .guarantee svg{width:40px;height:40px;color:var(--gold);margin-bottom:10px}
+  .guarantee h3{font-family:'Amiri',serif;font-size:20px;margin-bottom:8px}
+  .guarantee p{font-size:13.5px;color:rgba(23,19,14,.72);line-height:1.8}
+
+  /* CTA نهائي */
+  .final{padding:28px 20px 34px;text-align:center}
+  .final .price-row{margin-bottom:2px}
+  .final .save{margin-bottom:16px}
+
+  .foot{text-align:center;font-size:11.5px;color:rgba(23,19,14,.5);padding:0 20px 20px;line-height:1.8}
+
+  /* شريط سفلي ثابت */
+  .sticky{position:fixed;bottom:0;left:0;right:0;z-index:20;padding:9px 12px;background:rgba(246,239,226,.9);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-top:1px solid rgba(160,130,90,.25);box-shadow:0 -8px 24px -12px rgba(90,66,38,.4)}
+  .sticky-in{max-width:440px;margin:0 auto;display:flex;align-items:center;gap:12px}
+  .sticky .pr{display:flex;flex-direction:column;line-height:1.1;flex-shrink:0}
+  .sticky .pr b{font-family:'Amiri',serif;font-size:21px}
+  .sticky .pr s{font-size:12px;color:rgba(23,19,14,.45)}
+  .sticky .cta{flex:1;padding:14px 16px;font-size:15.5px}
+
+  @media (max-width:400px){h1{font-size:29px}.window{width:168px;height:168px}.trust-strip{grid-template-columns:1fr}}
+  @media (prefers-reduced-motion:reduce){.card{animation:none}}
 </style>
 </head>
 <body>
 
-<!-- الخلفية الصورية -->
 <img class="bg-photo" src="bg.jpg" alt="" aria-hidden="true" onerror="this.remove()">
 
-<!-- المشهد الخلفي (يظهر إذا لم توجد bg.jpg) -->
-<div class="scene" aria-hidden="true">
-  <div class="moon"></div>
-  <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice">
-    <path d="M0,560 C240,480 420,530 640,500 C880,465 1080,540 1440,470 L1440,900 L0,900 Z" fill="#d8bd97" opacity=".55"/>
-    <path d="M0,650 C300,580 560,660 820,620 C1080,580 1260,660 1440,610 L1440,900 L0,900 Z" fill="#e3ccab" opacity=".75"/>
-    <path d="M0,760 C360,700 680,780 1000,740 C1220,712 1340,760 1440,740 L1440,900 L0,900 Z" fill="#ecdcc1"/>
-    <path d="M1050,540 L1120,455 L1200,530 L1260,480 L1330,560 L1050,560 Z" fill="#9c6f4e" opacity=".5"/>
-    <path d="M120,600 L190,505 L280,595 L120,610 Z" fill="#8f6647" opacity=".45"/>
-  </svg>
-  <div class="orb-sm orb-1"></div>
-  <div class="orb-sm orb-2"></div>
-  <svg class="grass g1" viewBox="0 0 100 80"><g stroke="#7a6a4a" stroke-width="1.6" fill="none" stroke-linecap="round"><path d="M50,80 C48,50 42,30 30,12"/><path d="M52,80 C54,48 60,28 74,10"/><path d="M50,80 C50,45 49,25 50,5"/><path d="M48,80 C44,55 36,40 22,30"/><path d="M54,80 C60,55 68,42 82,34"/></g></svg>
-  <svg class="grass g2" viewBox="0 0 100 80"><g stroke="#857452" stroke-width="1.4" fill="none" stroke-linecap="round"><path d="M50,80 C46,50 38,32 26,16"/><path d="M52,80 C56,46 64,30 78,14"/><path d="M50,80 C50,48 50,26 51,8"/></g></svg>
-  <svg class="grass g3" viewBox="0 0 100 80"><g stroke="#7a6a4a" stroke-width="1.5" fill="none" stroke-linecap="round"><path d="M50,80 C47,52 40,34 28,18"/><path d="M52,80 C55,48 62,30 76,12"/><path d="M50,80 C50,46 49,24 50,6"/><path d="M47,80 C42,58 34,44 20,36"/></g></svg>
-  <svg class="grass g4" viewBox="0 0 100 80"><g stroke="#857452" stroke-width="1.3" fill="none" stroke-linecap="round"><path d="M50,80 C46,52 40,36 30,22"/><path d="M52,80 C56,50 62,34 74,20"/></g></svg>
+<div class="wrap">
+
+  <!-- ============ HERO ============ -->
+  <header class="hero">
+    <div class="card">
+      <div class="window"><img src="product.jpg" alt="عبوة كحل الإثمد الحجازي مع مكحلة نحاسية" onerror="this.remove()"></div>
+      <p class="eyebrow">HOUSE OF ATHMID</p>
+      <h1>كحل الإثمد الأصلي<br>من قلب المدينة المنورة</h1>
+      <p class="sub">إثمد نقي ١٠٠٪ — خالٍ من الرصاص، مصفّى يدويًا،<br>مع مكحلة نحاسية فاخرة في علبة أنيقة.</p>
+      <div class="badges">
+        <span class="badge">نقي ١٠٠٪</span>
+        <span class="badge">خالٍ من الرصاص</span>
+        <span class="badge">صُنع في السعودية</span>
+      </div>
+      <div class="price-row">
+        <span class="price">٩٧ <span>ر.س</span></span>
+        <span class="old">١١٠ ر.س</span>
+      </div>
+      <span class="save">وفّر ١٣ ر.س — لفترة محدودة</span>
+      <a class="cta buy" href="https://www.amazon.sa/dp/B0GK9G4D2H" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4H5L4 6H2v2h1.6l2.7 9.4A2 2 0 0 0 8.2 19h8.6a2 2 0 0 0 1.9-1.5L20.8 10H6.2l-.9-4A2 2 0 0 0 4 4z" opacity=".9"/><circle cx="10" cy="21" r="1.6"/><circle cx="17" cy="21" r="1.6"/></svg>
+        أكمِل طلبك على أمازون
+      </a>
+      <p class="microtrust"><span>توصيل مجاني</span><span class="dot">•</span><span>إرجاع مجاني ١٥ يوم</span><span class="dot">•</span><span>دفع آمن عبر أمازون</span></p>
+    </div>
+  </header>
+
+  <!-- ============ شريط الثقة ============ -->
+  <section class="blk">
+    <div class="trust-strip">
+      <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V5z"/><path d="m9 12 2 2 4-4"/></svg>أصلي ١٠٠٪ ومضمون</div>
+      <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.9 6.9A9 9 0 1 1 12 3"/><path d="M22 4 12 14.01l-3-3"/></svg>خالٍ من الرصاص</div>
+      <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>شحن مجاني وسريع</div>
+      <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0"/><path d="M12 7v5l3 2"/></svg>يُشحن ويُباع عبر أمازون</div>
+    </div>
+  </section>
+
+  <!-- ============ الفوائد ============ -->
+  <section class="blk">
+    <h2>لماذا كحل الإثمد الأصلي؟</h2>
+    <p class="lead">ليس كل كحل يُسمّى إثمدًا. هذا حجر إثمد خام أصلي، لا صبغات صناعية ولا إضافات.</p>
+    <div class="benefits">
+      <div class="bcard">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div><h3>سواد ثابت وعين واضحة</h3><p>لون أسود طبيعي عميق يمنح العين إطلالة جذّابة تدوم طويلًا.</p></div>
+      </div>
+      <div class="bcard">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></div>
+        <div><h3>نقاء ١٠٠٪ وآمن على العين</h3><p>مصفّى ومطحون يدويًا حتى يصبح ناعمًا باردًا لطيفًا على العيون الحساسة — وخالٍ تمامًا من الرصاص.</p></div>
+      </div>
+      <div class="bcard">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 9.2 8.6 2 9.2l5.5 4.7L5.8 21 12 17l6.2 4-1.7-7.1L22 9.2l-7.2-.6z"/></svg></div>
+        <div><h3>إحياءٌ للسنّة بلمسة فاخرة</h3><p>يُعرف الإثمد منذ القِدَم في تراثنا، نقدّمه لك بتصميم عصري أنيق يليق به.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ داخل العلبة ============ -->
+  <section class="blk">
+    <h2>ماذا يصلك في العلبة؟</h2>
+    <ul class="box-list">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>ربع تولة من الإثمد النقي (٢٢ مل تقريبًا)</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>مكحلة (مرود) نحاسية فاخرة</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>عبوة أنيقة من دار الإثمد — مثالية كهدية</li>
+    </ul>
+  </section>
+
+  <!-- ============ كيفية الاستخدام ============ -->
+  <section class="blk">
+    <h2>سهل الاستخدام</h2>
+    <div class="steps">
+      <div class="step"><span class="n">١</span><p>اغمس طرف المرود النحاسي في مسحوق الإثمد برفق.</p></div>
+      <div class="step"><span class="n">٢</span><p>مرّره على الخط الداخلي للجفن من الزاوية إلى الزاوية.</p></div>
+      <div class="step"><span class="n">٣</span><p>أغلق عينك للحظة — والنتيجة سواد ناعم وثابت.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ الضمان ============ -->
+  <section class="blk">
+    <div class="guarantee">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V5z"/></svg>
+      <h3>تسوّق باطمئنان</h3>
+      <p>يُباع من <b>House of Athmid</b> ويُشحن عبر <b>أمازون السعودية</b>. دفعك آمن، والتوصيل مجاني، والإرجاع مجاني خلال ١٥ يومًا إن لم يعجبك.</p>
+    </div>
+  </section>
+
+  <!-- ============ CTA نهائي ============ -->
+  <section class="final">
+    <h2 style="font-family:'Amiri',serif;font-size:26px;margin-bottom:14px">جاهز لتجربة الإثمد الأصلي؟</h2>
+    <div class="price-row">
+      <span class="price">٩٧ <span>ر.س</span></span>
+      <span class="old">١١٠ ر.س</span>
+    </div>
+    <span class="save">وفّر ١٣ ر.س — لفترة محدودة</span>
+    <a class="cta gold buy" href="https://www.amazon.sa/dp/B0GK9G4D2H" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4H5L4 6H2v2h1.6l2.7 9.4A2 2 0 0 0 8.2 19h8.6a2 2 0 0 0 1.9-1.5L20.8 10H6.2l-.9-4A2 2 0 0 0 4 4z" opacity=".9"/><circle cx="10" cy="21" r="1.6"/><circle cx="17" cy="21" r="1.6"/></svg>
+      اطلبه الآن على أمازون
+    </a>
+    <p class="microtrust" style="justify-content:center"><span>توصيل مجاني</span><span class="dot">•</span><span>إرجاع مجاني</span><span class="dot">•</span><span>دفع آمن</span></p>
+  </section>
+
+  <p class="foot">House of Athmid — دار الإثمد · صُنع في المملكة العربية السعودية<br>الفوائد المذكورة موروثة تقليديًا ولا تُغني عن استشارة الطبيب عند الحاجة.</p>
+
 </div>
 
-<!-- البطاقة -->
-<main class="stage">
-  <article class="card">
-
-    <div class="window">
-      <img src="product.jpg" alt="عبوة كحل الإثمد الحجازي" onerror="this.remove()">
-    </div>
-
-    <p class="eyebrow">HOUSE OF ATHMID</p>
-    <h1>كحل الإثمد الحجازي الأصيل</h1>
-    <p class="sub">نقاء مستوحى من إرث المدينة المنورة...<br>وفخامة صُممت لترافق جمال عينيك كل يوم</p>
-
-    <div class="divider"></div>
-
-    <p class="price">١١٠ <span>ر.س</span></p>
-
-    <a class="cta" id="buy-btn" href="https://amzn.eu/d/03UWrCWQ" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4h-2l-1 2h-2v2h1.6l2.7 9.4a2 2 0 0 0 1.9 1.6h8.6a2 2 0 0 0 1.9-1.5l2.1-7.5h-14.6l-0.9-4a2 2 0 0 0 -1.3-2z" opacity=".9"/><circle cx="10" cy="21" r="1.6"/><circle cx="17" cy="21" r="1.6"/></svg>
-      اطلب الآن من أمازون
-    </a>
-
-    <p class="note">إثمد أصلي<span class="dot">·</span>مرود نحاسي<span class="dot">·</span>شحن سريع</p>
-
-  </article>
-</main>
+<!-- ============ شريط سفلي ثابت ============ -->
+<div class="sticky">
+  <div class="sticky-in">
+    <div class="pr"><b>٩٧ ر.س</b><s>١١٠ ر.س</s></div>
+    <a class="cta buy" href="https://www.amazon.sa/dp/B0GK9G4D2H" rel="noopener">اطلب الآن على أمازون</a>
+  </div>
+</div>
 
 <script>
-  document.getElementById('buy-btn').addEventListener('click', function(){
+  // إطلاق InitiateCheckout عند أي زر شراء + ViewContent عند تحميل الصفحة
+  (function(){
+    function fireCheckout(){
+      if (window.ttq) {
+        ttq.track('InitiateCheckout', {
+          content_id: 'B0GK9G4D2H',
+          content_name: 'كحل الإثمد الأصلي',
+          content_type: 'product',
+          currency: 'SAR',
+          value: 97
+        });
+      }
+    }
+    document.querySelectorAll('.buy').forEach(function(el){
+      el.addEventListener('click', fireCheckout);
+    });
     if (window.ttq) {
-      ttq.track('InitiateCheckout', {
-        content_name: 'كحل الإثمد الحجازي الأصيل',
+      ttq.track('ViewContent', {
+        content_id: 'B0GK9G4D2H',
+        content_name: 'كحل الإثمد الأصلي',
         content_type: 'product',
         currency: 'SAR',
-        value: 110
+        value: 97
       });
     }
-  });
+  })();
 </script>
 
 </body>
